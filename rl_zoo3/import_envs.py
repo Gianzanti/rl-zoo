@@ -70,3 +70,12 @@ for env_id in MaskVelocityWrapper.velocity_indices.keys():
         id=f"{name}NoVel-v{version}",
         entry_point=create_no_vel_env(env_id),  # type: ignore[arg-type]
     )
+
+# Register Robotis Environment
+env_name = "Robotis"
+env_version = 0
+env = f"{env_name}-v{env_version}"
+register(
+    id=env,
+    entry_point="robotis_op3.robotis:RobotisEnv",
+)
