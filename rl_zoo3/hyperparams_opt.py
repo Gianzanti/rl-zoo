@@ -27,9 +27,9 @@ def sample_ppo_params(trial: optuna.Trial, n_actions: int, n_envs: int, addition
     vf_coef = trial.suggest_float("vf_coef", 0, 1)
     net_arch_type = trial.suggest_categorical("net_arch", ["tiny", "small", "medium"])
     # Uncomment for gSDE (continuous actions)
-    # log_std_init = trial.suggest_float("log_std_init", -4, 1)
+    log_std_init = trial.suggest_float("log_std_init", -4, 1)
     # Uncomment for gSDE (continuous action)
-    # sde_sample_freq = trial.suggest_categorical("sde_sample_freq", [-1, 8, 16, 32, 64, 128, 256])
+    sde_sample_freq = trial.suggest_categorical("sde_sample_freq", [-1, 8, 16, 32, 64, 128, 256])
     # Orthogonal initialization
     ortho_init = False
     # ortho_init = trial.suggest_categorical('ortho_init', [False, True])
@@ -37,9 +37,9 @@ def sample_ppo_params(trial: optuna.Trial, n_actions: int, n_envs: int, addition
     activation_fn_name = trial.suggest_categorical("activation_fn", ["tanh", "relu"])
     # lr_schedule = "constant"
     # Uncomment to enable learning rate schedule
-    # lr_schedule = trial.suggest_categorical('lr_schedule', ['linear', 'constant'])
-    # if lr_schedule == "linear":
-    #     learning_rate = linear_schedule(learning_rate)
+    lr_schedule = trial.suggest_categorical('lr_schedule', ['linear', 'constant'])
+    if lr_schedule == "linear":
+        learning_rate = linear_schedule(learning_rate)
 
     # TODO: account when using multiple envs
     if batch_size > n_steps:
@@ -66,9 +66,9 @@ def sample_ppo_params(trial: optuna.Trial, n_actions: int, n_envs: int, addition
         "gae_lambda": gae_lambda,
         "max_grad_norm": max_grad_norm,
         "vf_coef": vf_coef,
-        # "sde_sample_freq": sde_sample_freq,
+        "sde_sample_freq": sde_sample_freq,
         "policy_kwargs": dict(
-            # log_std_init=log_std_init,
+            log_std_init=log_std_init,
             net_arch=net_arch,
             activation_fn=activation_fn,
             ortho_init=ortho_init,
