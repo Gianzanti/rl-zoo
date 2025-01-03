@@ -1,0 +1,34 @@
+Robotis-v0:
+  policy: 'MlpPolicy'
+  n_timesteps: !!float 5e7
+  n_envs: 6
+
+DarwinOp3-v0:
+  # normalize: true
+  policy: 'MlpPolicy'
+  n_timesteps: !!float 5e7
+  n_envs: 6
+  callback: 
+    - research.callbacks.tb_cb.TensorboardCallback
+
+  # batch_size: 256
+  # n_steps: 64
+  # gamma: 0.995
+  # learning_rate: 0.00020640254913329836
+  # ent_coef: 5.343732373207666e-05
+  # clip_range: 0.1
+  # n_epochs: 10
+  # gae_lambda: 0.9
+  # max_grad_norm: 0.7
+  # vf_coef : 0.5613370264092407
+  # sde_sample_freq: 64
+  # # lr_schedule: constant
+  # policy_kwargs: "dict(
+  #   log_std_init=0.5874812665642747,
+  #   ortho_init=False,
+  #   activation_fn=nn.ReLU,
+  #   net_arch=dict(pi=[64], vf=[64])
+  # )"
+
+
+
