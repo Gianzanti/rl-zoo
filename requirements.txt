@@ -10,3 +10,6 @@ plotly
 # panda-gym~=3.0.1
 wandb
 moviepy>=1.0.0
+
+mujoco >= 3.2.7
+imageio >= 2.37.0
