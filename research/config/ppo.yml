@@ -3,13 +3,22 @@ Robotis-v0:
   n_timesteps: !!float 5e7
   n_envs: 6
 
+DarwinOp3-v1:
+  policy: 'MlpPolicy'
+  n_timesteps: !!float 5e7
+  # n_envs: 6
+  callback: 
+    - gym_env.envs.callbacks.TensorboardCallback
+
+
 DarwinOp3-v0:
   # normalize: true
   policy: 'MlpPolicy'
   n_timesteps: !!float 5e7
-  n_envs: 6
+  # n_envs: 6
   callback: 
-    - research.callbacks.tb_cb.TensorboardCallback
+    - gym_env.envs.callbacks.TensorboardCallback
+    # - research.callbacks.tb_cb.TensorboardCallback
 
   # batch_size: 256
   # n_steps: 64

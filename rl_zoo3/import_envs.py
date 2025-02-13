@@ -72,20 +72,8 @@ for env_id in MaskVelocityWrapper.velocity_indices.keys():
     )
 
 # Register Robotis Environment
-env_name = "Robotis"
-env_version = 0
-env = f"{env_name}-v{env_version}"
 register(
-    id=env,
-    entry_point="robotis_op3.robotis:RobotisEnv",
-)
-
-# Register Robotis Environment
-env_name = "DarwinOp3"
-env_version = 0
-env = f"{env_name}-v{env_version}"
-register(
-    id=env,
-    entry_point="darwin_op3.env.darwin_env:DarwinEnv",
+    id="DarwinOp3-v1",
+    entry_point="gym_env.envs:DarwinOp3Env",
     nondeterministic=True,
 )

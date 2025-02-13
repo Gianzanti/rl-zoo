@@ -26,21 +26,22 @@ class TensorboardCallback(BaseCallback):
         # to have access to the parent object
         # self.parent = None  # type: Optional[BaseCallback]
         super().__init__(verbose)
-        self.x_pos = (0,0)
-        self.y_pos = (0,0)
-        self.z_pos = (0,0)
-        self.x_vel = (0,0)
-        self.y_vel = (0,0)
-        self.forward_reward = (0,0)
+        # self.x_pos = (0,0)
+        # self.y_pos = (0,0)
+        # self.z_pos = (0,0)
+        # self.x_vel = (0,0)
+        # self.y_vel = (0,0)
+        # self.forward_reward = (0,0)
         # self.distance_traveled = (0,0)
         # self.rotation_penalty = (0,0)
         # self.control_cost = (0,0)
+        print("001 - Tensorboard Callback Initialized")
 
     def _on_training_start(self) -> None:
         """
         This method is called before the first rollout starts.
         """
-        pass
+        print("002 - Training Started")
 
     def _on_rollout_start(self) -> None:
         """
@@ -48,7 +49,7 @@ class TensorboardCallback(BaseCallback):
         using the current policy.
         This event is triggered before collecting new samples.
         """
-        pass
+        print("003 - Rollout Started")
 
     def _on_step(self) -> bool:
         """
@@ -59,39 +60,39 @@ class TensorboardCallback(BaseCallback):
 
         :return: If the callback returns False, training is aborted early.
         """
-        # print("Step: ", self.num_timesteps)
-        info = self.locals['infos'][0]
+        print("004 - Step: ", self.num_timesteps)
+        # info = self.locals['infos'][0]
 
         # calculate the mean of the values
-        self.x_pos = ((self.x_pos[0] + info['x_position']) / 2, max(self.x_pos[1], info['x_position']))
-        self.y_pos = ((self.y_pos[0] + info['y_position']) / 2, max(self.y_pos[1], info['y_position']))
-        self.z_pos = ((self.z_pos[0] + info['z_position']) / 2, max(self.z_pos[1], info['z_position']))
-        self.x_vel = ((self.x_vel[0] + info['x_velocity']) / 2, max(self.x_vel[1], info['x_velocity']))
-        self.y_vel = ((self.y_vel[0] + info['y_velocity']) / 2, max(self.y_vel[1], info['y_velocity']))
-        self.forward_reward = ((self.forward_reward[0] + info['forward_reward']) / 2, max(self.forward_reward[1], info['forward_reward']))
+        # self.x_pos = ((self.x_pos[0] + info['x_position']) / 2, max(self.x_pos[1], info['x_position']))
+        # self.y_pos = ((self.y_pos[0] + info['y_position']) / 2, max(self.y_pos[1], info['y_position']))
+        # self.z_pos = ((self.z_pos[0] + info['z_position']) / 2, max(self.z_pos[1], info['z_position']))
+        # self.x_vel = ((self.x_vel[0] + info['x_velocity']) / 2, max(self.x_vel[1], info['x_velocity']))
+        # self.y_vel = ((self.y_vel[0] + info['y_velocity']) / 2, max(self.y_vel[1], info['y_velocity']))
+        # self.forward_reward = ((self.forward_reward[0] + info['forward_reward']) / 2, max(self.forward_reward[1], info['forward_reward']))
         # self.distance_traveled = ((self.distance_traveled[0] + info['distance_traveled']) / 2, max(self.distance_traveled[1], info['distance_traveled']))
         # self.rotation_penalty = ((self.rotation_penalty[0] + info['rotation_penalty']) / 2, max(self.rotation_penalty[1], info['rotation_penalty']))
         # self.control_cost = ((self.control_cost[0] + info['control_cost']) / 2, max(self.control_cost[1], info['control_cost']))
 
 
         # log the mean values
-        self.logger.record('mean_info/pos_x', self.x_pos[0])
-        self.logger.record('mean_info/pos_y', self.y_pos[0])
-        self.logger.record('mean_info/pos_z', self.z_pos[0])
-        self.logger.record('mean_info/vel_x', self.x_vel[0])
-        self.logger.record('mean_info/vel_y', self.y_vel[0])
-        self.logger.record('mean_reward/forward_reward', self.forward_reward[0])
+        # self.logger.record('mean_info/pos_x', self.x_pos[0])
+        # self.logger.record('mean_info/pos_y', self.y_pos[0])
+        # self.logger.record('mean_info/pos_z', self.z_pos[0])
+        # self.logger.record('mean_info/vel_x', self.x_vel[0])
+        # self.logger.record('mean_info/vel_y', self.y_vel[0])
+        # self.logger.record('mean_reward/forward_reward', self.forward_reward[0])
         # self.logger.record('mean_reward/distance_traveled', self.distance_traveled[0])
         # self.logger.record('mean_reward/rotation_penalty', self.rotation_penalty[0])
         # self.logger.record('mean_reward/control_cost', self.control_cost[0])
 
         # log the max values
-        self.logger.record('max_info/pos_x', self.x_pos[1])
-        self.logger.record('max_info/pos_y', self.y_pos[1])
-        self.logger.record('max_info/pos_z', self.z_pos[1])
-        self.logger.record('max_info/vel_x', self.x_vel[1])
-        self.logger.record('max_info/vel_y', self.y_vel[1])
-        self.logger.record('max_reward/forward_reward', self.forward_reward[1])
+        # self.logger.record('max_info/pos_x', self.x_pos[1])
+        # self.logger.record('max_info/pos_y', self.y_pos[1])
+        # self.logger.record('max_info/pos_z', self.z_pos[1])
+        # self.logger.record('max_info/vel_x', self.x_vel[1])
+        # self.logger.record('max_info/vel_y', self.y_vel[1])
+        # self.logger.record('max_reward/forward_reward', self.forward_reward[1])
         # self.logger.record('max_reward/distance_traveled', self.distance_traveled[1])
         # self.logger.record('max_reward/rotation_penalty', self.rotation_penalty[1])
         # self.logger.record('max_reward/control_cost', self.control_cost[1])
@@ -102,11 +103,11 @@ class TensorboardCallback(BaseCallback):
         """
         This event is triggered before updating the policy.
         """
-        pass
+        print("005 - Rollout Ended")
 
     def _on_training_end(self) -> None:
         """
         This event is triggered before exiting the `learn()` method.
         """
-        pass
+        print("006 - Training Ended")
 
