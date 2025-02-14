@@ -76,4 +76,5 @@ register(
     id="DarwinOp3-v1",
     entry_point="gym_env.envs:DarwinOp3Env",
     nondeterministic=True,
+    max_episode_steps=3000
 )
