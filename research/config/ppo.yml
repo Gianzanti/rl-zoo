@@ -5,11 +5,13 @@ Robotis-v0:
 
 DarwinOp3-v1:
   policy: 'MlpPolicy'
-  n_timesteps: !!float 5e7
-  n_envs: 4
+  n_timesteps: !!float 5e6
+  n_envs: 8
   callback: 
     - gym_env.envs.callbacks.TensorboardCallback
-
+  env_wrapper:
+    - gymnasium.wrappers.TimeLimit:
+        max_episode_steps: 3100
 
 DarwinOp3-v0:
   # normalize: true
