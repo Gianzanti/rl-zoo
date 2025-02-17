@@ -27,9 +27,9 @@ DarwinOp3-v1:
   n_envs: 8
   callback: 
     - gym_env.envs.callbacks.TensorboardCallback
-  env_wrapper:
-    - gymnasium.wrappers.TimeLimit:
-        max_episode_steps: 3100
+  # env_wrapper:
+  #   - gymnasium.wrappers.TimeLimit:
+  #       max_episode_steps: 3100
   # env_kwargs:
   #   motor_max_torque: 3.0
   #   keep_alive_reward: 0.1
