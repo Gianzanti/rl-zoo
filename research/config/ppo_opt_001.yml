@@ -22,20 +22,16 @@
 # Trial 78 finished with value: 441.4 and parameters: {'batch_size': 128, 'n_steps': 2048, 'gamma': 0.9999, 'learning_rate': 0.0007666339265330843, 'ent_coef': 6.825722044873898e-06, 'clip_range': 0.1, 'n_epochs': 20, 'gae_lambda': 0.95, 'max_grad_norm': 0.6, 'vf_coef': 0.7379865410033998, 'net_arch': 'medium', 'log_std_init': 0.6316775104624097, 'sde_sample_freq': 8, 'activation_fn': 'relu', 'lr_schedule': 'constant'}. Best is trial 78 with value: 441.4
 
 DarwinOp3-v1:
+  normalize: "dict(norm_obs=True, norm_reward=True)"
   policy: 'MlpPolicy'
   n_timesteps: !!float 5e7
   n_envs: 8
   callback: 
     - gym_env.envs.callbacks.TensorboardCallback
-  # env_wrapper:
-  #   - gymnasium.wrappers.TimeLimit:
-  #       max_episode_steps: 3100
-  # env_kwargs:
-  #   motor_max_torque: 3.0
-  #   keep_alive_reward: 0.1
-  #   forward_velocity_weight: 3.0
-  #   target_distance: 3.0
-  #   reach_target_reward: 1000.0
+  env_wrapper:
+    - gymnasium.wrappers.TimeLimit:
+        max_episode_steps: 5100
+
 
   # batch_size: 128
   # n_steps: 2048
