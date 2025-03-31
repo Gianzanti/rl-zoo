@@ -1,3 +1,38 @@
+## Release 2.6.0 (2025-03-24)
+
+### Breaking Changes
+- Upgraded to SB3 >= 2.6.0
+- Refactored hyperparameter optimization. The Optuna [Journal storage backend](https://optuna.readthedocs.io/en/stable/reference/generated/optuna.storages.JournalStorage.html) is now supported (recommended default) and you can easily load tuned hyperparameter via the new `--trial-id` argument of `train.py`.
+
+For example, optimize using the journal storage:
+```bash
+python train.py --algo ppo --env Pendulum-v1 -n 40000 --study-name demo --storage logs/demo.log --sampler tpe --n-evaluations 2 --optimize --no-optim-plots
+```
+Visualize live using [optuna-dashboard](https://optuna-dashboard.readthedocs.io/en/latest/getting-started.html)
+```
+optuna-dashboard logs/demo.log
+```
+
+Load hyperparameters from trial number 21 and train an agent with it:
+```bash
+python train.py --algo ppo --env Pendulum-v1 --study-name demo --storage logs/demo.log --trial-id 21
+```
+
+
+### New Features
+- Save the exact command line used to launch a training
+- Added support for special vectorized env (e.g. Brax, IsaacSim) by allowing to override the `VecEnv` class use to instantiate the env in the `ExperimentManager`
+- Allow to disable auto-logging by passing `--log-interval -2` (useful when logging things manually)
+- Added Gymnasium v1.1 support
+
+### Bug fixes
+- Fixed use of old HF api in `get_hf_trained_models()`
+
+### Documentation
+
+### Other
+- `scripts/parse_study.py` is now deprecated because of the new hyperparameter optimization scripts
+
 ## Release 2.5.0 (2025-01-27)
 
 ### Breaking Changes
