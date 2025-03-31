@@ -1,5 +1,0 @@
-DarwinOp3-v0:
-  normalize: true
-  n_timesteps: !!float 5e7
-  policy: 'MlpPolicy'
-  n_envs: 8

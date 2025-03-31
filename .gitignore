@@ -22,6 +22,7 @@ _build/
 
 tests/dummy_env/build/
 
+training_run/
 
 # Setuptools distribution and build folders.
 /dist/
