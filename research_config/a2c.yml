@@ -1,8 +1,8 @@
 DarwinOp3-v1:
   normalize: "dict(norm_obs=True, norm_reward=True)"
   policy: 'MlpPolicy'
-  n_timesteps: !!float 5e7
-  n_envs: 8
+  n_timesteps: !!float 10e6
+  n_envs: 4
   callback: 
     - gym_env.envs.callbacks.TensorboardCallback
   env_wrapper:
