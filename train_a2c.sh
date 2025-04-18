@@ -1,0 +1,1 @@
+python3 train.py --algo a2c --env DarwinOp3-v1 -conf research_config/a2c.yml --tensorboard-log research_logs/ --save-freq 50000 --vec-env subproc --eval-freq 50000 --n-eval-envs 1 --eval-episodes 30 --env-kwargs keep_alive_reward:1.0 motor_max_torque:3.0 forward_velocity_weight:3.0 target_distance:10.0 reach_target_reward:1000.0 side_cost_weight:100.0 ctrl_cost_weight:0
