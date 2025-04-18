@@ -1,0 +1,106 @@
+DarwinOp3-v1:
+  policy: 'MlpPolicy'
+  n_timesteps: !!float 5e7
+  n_envs: 8
+  callback: 
+    - gym_env.envs.callbacks.TensorboardCallback
+  env_wrapper:
+    - gymnasium.wrappers.TimeLimit:
+        max_episode_steps: 5100
+  # env_kwargs:
+  #   motor_max_torque: 3.0
+  #   keep_alive_reward: 0.1
+  #   forward_velocity_weight: 3.0
+  #   target_distance: 3.0
+  #   reach_target_reward: 1000.0
+
+
+  # batch_size: 256
+  # n_steps: 64
+  # gamma: 0.995
+  # learning_rate: 0.00020640254913329836
+  # ent_coef: 5.343732373207666e-05
+  # clip_range: 0.1
+  # n_epochs: 10
+  # gae_lambda: 0.9
+  # max_grad_norm: 0.7
+  # vf_coef : 0.5613370264092407
+  # sde_sample_freq: 64
+  # # lr_schedule: constant
+  # policy_kwargs: "dict(
+  #   log_std_init=0.5874812665642747,
+  #   ortho_init=False,
+  #   activation_fn=nn.ReLU,
+  #   net_arch=dict(pi=[64], vf=[64])
+  # )"
+
+
+# {'batch_size': 32, 'n_steps': 16, 'gamma': 0.995, 'learning_rate': 0.00017386933708409737, 
+# 'ent_coef': 6.354243642512205e-08, 'clip_range': 0.1, 'n_epochs': 20, 'gae_lambda': 0.9, 'max_grad_norm': 0.9, 
+# 'vf_coef': 0.4052480861507444, 'net_arch': 'medium', 'log_std_init': -3.311952363741203, 'sde_sample_freq': 256, 
+# 'activation_fn': 'relu', 'lr_schedule': 'linear'}. Best is trial 43 with value: 211.69657539999997.
+
+  # batch_size: 32
+  # n_steps: 16
+  # gamma: 0.995
+  # learning_rate: lin_0.00017386933708409737
+  # ent_coef: 6.354243642512205e-08
+  # clip_range: 0.1
+  # n_epochs: 20
+  # gae_lambda: 0.9
+  # max_grad_norm: 0.9
+  # vf_coef : 0.4052480861507444
+  # sde_sample_freq: 256
+  # policy_kwargs: "dict(
+  #   log_std_init=-3.311952363741203,
+  #   ortho_init=False,
+  #   activation_fn=nn.ReLU,
+  #   net_arch=dict(pi=[256,256], vf=[256,256])
+  # )"
+
+
+  # Trial 79 finished with value: 331.4872104 and parameters: {'batch_size': 256, 'n_steps': 32, 'gamma': 0.9999, 
+  #'learning_rate': 0.0001516991748243762, 'ent_coef': 6.177370181429219e-07, 'clip_range': 0.1, 'n_epochs': 20, 
+  #'gae_lambda': 0.9, 'max_grad_norm': 5, 'vf_coef': 0.20116692266700192, 'net_arch': 'medium', 'log_std_init': -3.842686386057438, 
+  #'sde_sample_freq': 256, 'activation_fn': 'relu', 'lr_schedule': 'linear'}. Best is trial 79 with value: 331.4872104.
+
+  # batch_size: 256
+  # n_steps: 32
+  # gamma: 0.9999
+  # learning_rate: lin_0.0001516991748243762
+  # ent_coef: 6.177370181429219e-07
+  # clip_range: 0.1
+  # n_epochs: 20
+  # gae_lambda: 0.9
+  # max_grad_norm: 5
+  # vf_coef : 0.20116692266700192
+  # sde_sample_freq: 256
+  # policy_kwargs: "dict(
+  #   log_std_init=-3.842686386057438,
+  #   ortho_init=False,
+  #   activation_fn=nn.ReLU,
+  #   net_arch=dict(pi=[256,256], vf=[256,256])
+  # )"
+
+  # {'batch_size': 8, 'n_steps': 64, 'gamma': 0.99, 'learning_rate': 6.586849965453307e-05, 'ent_coef': 5.997794600109923e-07, 
+  # 'clip_range': 0.3, 'n_epochs': 10, 'gae_lambda': 0.9, 'max_grad_norm': 0.8, 'vf_coef': 0.7348822449677964, 'net_arch': 'tiny', 
+  # 'log_std_init': 0.05244383804610597, 'sde_sample_freq': -1, 'activation_fn': 'tanh', 'lr_schedule': 'linear'}. 
+  # Best is trial 74 with value: 103.63933460000001.
+
+  # batch_size: 8
+  # n_steps: 64
+  # gamma: 0.99
+  # learning_rate: lin_6.586849965453307e-05
+  # ent_coef: 5.997794600109923e-07
+  # clip_range: 0.3
+  # n_epochs: 10
+  # gae_lambda: 0.9
+  # max_grad_norm: 0.8
+  # vf_coef : 0.7348822449677964
+  # sde_sample_freq: -1
+  # policy_kwargs: "dict(
+  #   log_std_init=0.05244383804610597,
+  #   ortho_init=False,
+  #   activation_fn= nn.Tanh,
+  #   net_arch=dict(pi=[64], vf=[64])
+  # )"

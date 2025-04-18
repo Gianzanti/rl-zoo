@@ -1,0 +1,4 @@
+Robotis-v0:
+  policy: 'MlpPolicy'
+  n_timesteps: !!float 5e6
+  n_envs: 1
