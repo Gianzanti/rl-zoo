@@ -1,1 +1,2 @@
-python3 train.py --algo ppo --env DarwinOp3-v1 -conf research_config/ppo.yml --tensorboard-log research_logs/ --device cpu --save-freq 50000 --vec-env subproc --eval-freq 50000 --n-eval-envs 1 --eval-episodes 10 --env-kwargs keep_alive_reward:1.0 motor_max_torque:3.0 forward_velocity_weight:3.0 target_distance:5.0 reach_target_reward:1000.0 side_cost_weight:100.0 ctrl_cost_weight:0 distance_rew_weight:2.5
+python3 train.py --seed 1 --algo ppo --env DarwinOp3-v1 -conf research_config/ppo.yml --tensorboard-log research_logs/ --device cpu --save-freq 50000 --vec-env subproc --eval-freq 50000 --n-eval-envs 1 --eval-episodes 10 --env-kwargs keep_alive_reward:1.0 motor_max_torque:3.0 forward_velocity_weight:5.0 ctrl_cost_weight:1e-3
+# --log-interval 50 

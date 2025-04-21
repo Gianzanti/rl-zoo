@@ -8,3 +8,4 @@ DarwinOp3-v1:
   env_wrapper:
     - gymnasium.wrappers.TimeLimit:
         max_episode_steps: 5100
+  learning_starts: 10000        

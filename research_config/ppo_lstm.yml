@@ -1,5 +1,5 @@
 DarwinOp3-v1:
-  policy: 'MlpPolicy'
+  policy: 'MlpLstmPolicy'
   normalize: "dict(norm_obs=True, norm_reward=True)"  
   n_timesteps: !!float 1e7
   n_envs: 6
