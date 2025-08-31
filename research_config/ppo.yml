@@ -1,4 +1,4 @@
-DarwinOp3-v1:
+DarwinOp3-v2:
   policy: 'MlpPolicy'
   normalize: "dict(norm_obs=True, norm_reward=True)"  
   n_timesteps: !!float 1e7
