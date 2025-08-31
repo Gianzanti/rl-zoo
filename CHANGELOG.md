@@ -1,3 +1,23 @@
+## Release 2.7.0 (2025-07-25)
+
+### Breaking Changes
+- Upgraded to SB3 >= 2.7.0
+- `linear_schedule` now returns a `SimpleLinearSchedule` object for better portability
+- Renamed `LunarLander-v2` to `LunarLander-v3` in hyperparameters
+- Renamed `CarRacing-v2` to `CarRacing-v3` in hyperparameters
+
+### New Features
+- Added Gymnasium v1.2 support
+
+### Bug fixes
+- Docker GPU images are now working again
+- Use `ConstantSchedule`, and `SimpleLinearSchedule` instead of `constant_fn` and `linear_schedule`
+- Fixed `CarRacing-v3` hyperparameters for newer Gymnasium version
+
+### Documentation
+
+### Other
+
 ## Release 2.6.0 (2025-03-24)
 
 ### Breaking Changes
