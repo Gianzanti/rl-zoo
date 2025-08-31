@@ -73,8 +73,8 @@ for env_id in MaskVelocityWrapper.velocity_indices.keys():
 
 # Register Robotis Environment
 register(
-    id="DarwinOp3-v1",
-    entry_point="gym_env.envs:DarwinOp3Env",
+    id="DarwinOp3-v2",
+    entry_point="robofei.env:DarwinOp3Env",
     nondeterministic=True,
     max_episode_steps=5000
 )
