@@ -1,8 +1,8 @@
 DarwinOp3-v2:
   policy: 'MlpPolicy'
   normalize: "dict(norm_obs=True, norm_reward=True)"  
-  n_timesteps: !!float 1e7
-  n_envs: 6
+  # n_timesteps: !!float 1e7
+  n_envs: 8
   callback: 
     - robofei.env.callbacks.TensorboardCallback
   env_wrapper:
