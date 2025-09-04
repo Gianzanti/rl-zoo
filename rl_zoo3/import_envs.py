@@ -76,5 +76,4 @@ register(
     id="DarwinOp3-v2",
     entry_point="robofei.env:DarwinOp3Env",
     nondeterministic=True,
-    max_episode_steps=5000
 )
