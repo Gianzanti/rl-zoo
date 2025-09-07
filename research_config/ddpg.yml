@@ -1,10 +1,10 @@
-DarwinOp3-v2:
+DarwinOp3-v3:
   normalize: "dict(norm_obs=True, norm_reward=True)"
   # n_timesteps: !!float 1e6
   policy: 'MlpPolicy'
-  n_envs: 8
-  callback: 
-    - robofei.env.callbacks.TensorboardCallback
+  # n_envs: 8
+  # callback: 
+  #   - robofei.env.callbacks.TensorboardCallback
   learning_starts: 10000
   noise_type: 'normal'
   noise_std: 0.1

@@ -1,13 +1,13 @@
-DarwinOp3-v2:
+DarwinOp3-v3:
   policy: 'MlpPolicy'
   normalize: "dict(norm_obs=True, norm_reward=True)"  
   # n_timesteps: !!float 1e7
-  n_envs: 8
-  callback: 
-    - robofei.env.callbacks.TensorboardCallback
-  env_wrapper:
-    - gymnasium.wrappers.TimeLimit:
-        max_episode_steps: 5100
+  # n_envs: 1
+  # callback: 
+  #   - robofei.env.callbacks.TensorboardCallback
+  # env_wrapper:
+  #   - gymnasium.wrappers.TimeLimit:
+  #       max_episode_steps: 100
   
   
   # use_sde: true

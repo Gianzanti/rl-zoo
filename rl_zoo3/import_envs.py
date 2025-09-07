@@ -72,8 +72,14 @@ for env_id in MaskVelocityWrapper.velocity_indices.keys():
     )
 
 # Register Robotis Environment
+# register(
+#     id="DarwinOp3-v2",
+#     entry_point="robofei.env:DarwinOp3Env",
+#     nondeterministic=True,
+# )
+
 register(
-    id="DarwinOp3-v2",
-    entry_point="robofei.env:DarwinOp3Env",
+    id="DarwinOp3-v3",
+    entry_point="op3.env:DarwinOp3Env",
     nondeterministic=True,
 )
